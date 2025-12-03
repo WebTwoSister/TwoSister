@@ -4,7 +4,7 @@ import Navbar from "../components/navbar";
 
 const main = () => {
   return (
-    <div className="bg-[linear-gradient(65deg,#96377F_0%,#96377F_60%,#F88944_90%,#F88944_100%)] h-176 w-full px-42">
+    <section className="bg-[linear-gradient(45deg,#96377F_0%,#96377F_70%,#F88944_95%,#F88944_100%)] h-176 w-full px-42">
       <div className="flex w-full justify-center items-center gap-10 text-white h-10">
         <p className="flex items-center">
           <span className="mx-2 text-2xl text-[#F88944]">
@@ -28,7 +28,8 @@ const main = () => {
         dedicated team ensures a spotless environment, tailored to your needs.
         Contact us today for a free quote!
       </p>
-    </div>
+    </section>
+    
   );
 };
 
