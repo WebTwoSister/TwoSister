@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import EmotionRegistry from "./EmotionRegistry";
 import "./globals.css";
 
 const baloo = localFont({
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${baloo.variable} ${bubblegum.variable} antialiased`}>
-        {children}
+        <EmotionRegistry>{children}</EmotionRegistry>
       </body>
     </html>
   );
