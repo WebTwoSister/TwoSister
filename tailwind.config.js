@@ -13,7 +13,11 @@ module.exports = {
         bubblegum: ["var(--font-bubblegum)"],
       },
       screens: {
-        '3xl': '1920px', // Custom breakpoint for very large screens
+        "3xl": "1920px", // Custom breakpoint for very large screens
+      },
+      transitionProperty: {
+        all: "all",
+        clip: "clip-path",
       },
     },
   },

@@ -34,14 +34,14 @@ const main = () => {
           </h1>
           <div className="flex md:hidden">
             <Image
-            src="/Main_IMG1.webp"
-            alt="Main"
-            loading="eager"
-            priority
-            width={600}
-            height={600}
-            className="w-full h-auto"
-          />
+              src="/Main_IMG1.webp"
+              alt="Main"
+              loading="eager"
+              priority
+              width={600}
+              height={600}
+              className="w-full h-auto"
+            />
           </div>
           <p className="p-adaptive-text text-start text-white">
             We provide top-notch cleaning services for your home and office. Our
