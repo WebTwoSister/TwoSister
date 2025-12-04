@@ -12,6 +12,9 @@ module.exports = {
         baloo: ["var(--font-baloo)"],
         bubblegum: ["var(--font-bubblegum)"],
       },
+      screens: {
+        '3xl': '1920px', // Custom breakpoint for very large screens
+      },
     },
   },
   variants: {
