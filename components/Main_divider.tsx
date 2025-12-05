@@ -3,14 +3,6 @@ import Image from "next/image"
 const Main_divider = () => {
   return (
     <div className="flex w-full h-auto">
-{/* 
-        <Image
-        src="/Main_divider.svg"
-        alt="Divider"
-        width={1440}
-        height={99}
-        className="w-full h-auto"
-      /> */}
 
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
      viewBox="0 0 1440 99" opacity="1">
