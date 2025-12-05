@@ -1,11 +1,11 @@
-import Image from "next/image"
-import NameTitle from "@/components/nameTitle"
+import Image from "next/image";
+import NameTitle from "@/components/nameTitle";
+import { forwardRef } from "react";
 
-const about = () => {
+const about = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <section id="about" className='flex w-full container-padding my-6'>
+    <section id="about" ref={ref} className="flex w-full container-padding">
       <div className="flex flex-col md:flex-row gap-10 w-full h-auto">
-
         {/* Image for large screens */}
         <div className="hidden relative md:flex flex-1/2 justify-start max-h-120">
           <Image
@@ -16,12 +16,13 @@ const about = () => {
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="flex flex-col flex-1/2 py-10">
+        <div className="flex flex-col flex-1/2 pt-10">
           {/* Name of main title with underline */}
-          <NameTitle name="About Us" color="text-black"/>
+          <NameTitle name="About Us" color="text-black" />
           {/* Main title */}
           <h2 className="h1-adaptive-text text-center md:text-start text-black md:mb-8">
-            <span className="text-[#F88944]">Two</span> Sisters - Cleaning Services
+            <span className="text-[#F88944]">Two</span> Sisters - Cleaning
+            Services
           </h2>
           {/* Image for small screens */}
           <div className="flex relative md:hidden max-h-120 my-6">
@@ -44,7 +45,7 @@ const about = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+});
 
-export default about
+export default about;
