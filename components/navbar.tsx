@@ -1,16 +1,15 @@
 "use client";
 import Image from "next/image";
 import AppointmentButton from "./Appoinment_button";
-// import { CgMenuRight } from "react-icons/cg";
 import { AnimatedMenu } from "./MobileMenu/AnimatedMenu";
 
-const SectionName = [
-  "Home",
-  "About Us",
-  "Services",
-  "Projects",
-  "FAQ",
-  "Contacts",
+const menuItems = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About Us" },
+  { href: "#services", label: "Services" },
+  { href: "#projects", label: "Projects" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#contacts", label: "Contacts" },
 ];
 
 const navbar = () => {
@@ -36,12 +35,12 @@ const navbar = () => {
         <p className="text-[0.875rem] text-center -mt-2">menu</p>
       </div>
       <ul className="hidden lg:flex flex-1 justify-center items-center gap-[4%] text-[1.25rem] text-[#333333]">
-        {SectionName.map((item, index) => (
+        {menuItems.map((item, index) => (
           <li
             key={index}
             className="hover:text-[#F88944] cursor-pointer transition duration-300"
           >
-            {item}
+            <a href={item.href}>{item.label}</a>
           </li>
         ))}
       </ul>

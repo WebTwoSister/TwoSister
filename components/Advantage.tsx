@@ -1,7 +1,7 @@
 export default function Advantage() {
   return (
     <>
-      <div className="hidden md:flex w-full h-65 pb-15 justify-between items-center bg-[url('/H-decoration.svg')] bg-cover bg-no-repeat">
+      <div className="hidden md:flex w-full h-100 pb-15 justify-between items-center bg-[url('/H-decoration.svg')] bg-cover bg-no-repeat">
         <div className="flex flex-col items-center rotate-6 ml-[10%] 2xl:ml-[15%] lg:mb-8">
           <span className="text-[8rem] text-white text-center font-baloo">
             10
