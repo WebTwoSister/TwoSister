@@ -10,11 +10,11 @@ import Services_divider from "@/components/Services_divider";
 
 export default function HomePage() {
   const { ref, inView } = useInView({
-    threshold: 0.3, // коли 30% секції видно — активується
+    threshold: 0.3, // when 30% of the section is visible — activated
   });
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col">
       <MainSection />
       <Main_divider />
       <AboutSection ref={ref} />

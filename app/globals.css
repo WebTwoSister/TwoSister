@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   --font-bubblegum: var(--font-bubblegum);
   --font-baloo: var(--font-baloo);
@@ -23,12 +22,9 @@ h1 {
 
 @layer {
   .h1-adaptive-text {
-    @apply text-[2rem] sm:text-[3rem] 2xl:text-[4rem];
+    @apply text-[clamp(2rem,4vw,4rem)] leading-tight;
   }
   .p-adaptive-text {
-    @apply text-[1rem] sm:text-[1.5rem] 3xl:!text-[2rem];
-  }
-  .container-padding {
-    @apply px-8 lg:px-16 xl:px-32 2xl:px-40 3xl:!px-60;
+    @apply text-[clamp(1rem,2vw,1.5rem)];
   }
 }
