@@ -8,7 +8,7 @@ export default function ButtonUpDown({ visible }: { visible: boolean }) {
       initial={{ opacity: 0, y: 20 }}
       animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.4 }}
-      className="flex flex-col fixed top-[50%] right-5 justify-between text-[0.875rem] h-50 z-50"
+      className="flex flex-col fixed top-[50%] right-1 justify-between text-[0.875rem] h-50 z-50"
     >
       {/* Button Up container */}
       <button
