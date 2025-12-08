@@ -92,9 +92,7 @@ const main = () => {
             </div>
             {/* Description paragraph */}
             <p className="p-adaptive-text text-start text-white">
-              We provide top-notch cleaning services for your home and office.
-              Our dedicated team ensures a spotless environment, tailored to
-              your needs. Contact us today for a free quote!
+              We provide high-quality cleaning services for homes and offices. We use safe products, modern equipment and offer great deals for our clients. Contact us today for a free quote!
             </p>
             {/* Appointment button and cat image */}
             <div className="flex w-full h-auto justify-center items-center md:justify-start md:items-start md:gap-10 my-4">

@@ -41,9 +41,7 @@ const about = forwardRef<HTMLDivElement>((props, ref) => {
             </div>
             {/* Description paragraph */}
             <p className="p-adaptive-text text-start text-black">
-              We provide top-notch cleaning services for your home and office.
-              Our dedicated team ensures a spotless environment, tailored to
-              your needs. Contact us today for a free quote!
+              Two Sisters is a team of cleaning professionals who care about the cleanliness and comfort of your home and office. We use safe products and an individual approach to each client.
             </p>
           </div>
         </div>
