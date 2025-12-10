@@ -9,12 +9,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-cards";
-
-// import './styles.css';
+import "swiper/css/pagination";
 
 // import required modules
-import { EffectCards } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 // Type of data for servicesData
 type Service = {
@@ -30,7 +28,7 @@ type Service = {
 const servicesData: Service[] = [
   {
     id: 1,
-    title: "Spring Cleaning",
+    title: "Deep Cleaning",
     description:
       "A complete cleaning of your home with special attention to detail. We remove dust, dirt in hard-to-reach places, refresh the space and make your home shiny and tidy.",
     features: [
@@ -46,7 +44,7 @@ const servicesData: Service[] = [
     description:
       "Professional regular cleaning of your home or office to maintain cleanliness and order every day without unnecessary hassle.",
     features: [
-      "Flexible cleaning schedule to suit your schedule.",
+      "Flexible cleaning schedule.",
       "Using safe and effective cleaning products.",
     ],
     imageSrc: "/regular_cleaning.webp",
@@ -54,11 +52,11 @@ const servicesData: Service[] = [
   },
   {
     id: 3,
-    title: "Construction Cleaning",
+    title: "Post Construction Cleaning",
     description:
       "Cleaning after construction or renovation work to completely remove dust, debris, and material residues and prepare the space for use.",
     features: [
-      "Removal of construction dust and small debris.",
+      "Removal of construction dust.",
       "Detailed cleaning of all surfaces.",
     ],
     imageSrc: "/construction.webp",
@@ -69,10 +67,7 @@ const servicesData: Service[] = [
     title: "Office Cleaning",
     description:
       "Regular and thorough cleaning of office spaces to create a clean, tidy and productive work environment.",
-    features: [
-      "Sanitizing work areas and common surfaces.",
-      "Cleaning at a time convenient for the company.",
-    ],
+    features: ["Sanitizing work areas.", "Wet cleaning."],
     imageSrc: "/office.webp",
     imageAlt: "Office cleaning service",
   },
@@ -81,10 +76,7 @@ const servicesData: Service[] = [
     title: "Window Washing",
     description:
       "Professional window cleaning inside and out to ensure maximum transparency and light transmission without streaks or stains.",
-    features: [
-      "Using quality products and professional tools.",
-      "Washing inside and out.",
-    ],
+    features: ["Using professional tools.", "Using quality products."],
     imageSrc: "/window.webp",
     imageAlt: "Window washing service",
   },
@@ -94,7 +86,7 @@ const servicesData: Service[] = [
     description:
       "Thorough cleaning of furniture from dust, stains and odors to restore its fresh appearance and extend its service life.",
     features: [
-      "Safe products for different types of fabrics.",
+      "Safe products for different types of surfaces.",
       "Deep cleaning to remove stubborn dirt.",
     ],
     imageSrc: "/furniture.webp",
@@ -124,7 +116,7 @@ export default function ServicesPage() {
     >
       {/* Component with adaptive padding */}
       <ContainerPadding>
-        <div className="flex flex-col justify-center items-center py-20">
+        <div className="flex flex-col justify-center items-center py-5 sm:py-20">
           {/* Name of main title with underline */}
           <NameTitle name="Services" color="text-white" />
           {/* Main title */}
@@ -194,32 +186,61 @@ export default function ServicesPage() {
             )}
           </div>
         </div>
-        <div className="flex md:hidden justify-center items-center w-full">
+        <div className="flex relative md:hidden justify-center items-center w-full overflow-hidden py-10">
           <Swiper
-            effect="cards"
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="w-full max-w-[400px] h-auto"
+            spaceBetween={50}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper w-full max-w-[400px] h-auto rounded-2xl"
           >
-            <SwiperSlide className="flex justify-center items-center rounded-2xl border-2 border-[#F88944] shadow-2xl bg-[#95377F] aspect-3/4">
-              Slide 1
-            </SwiperSlide>
-            <SwiperSlide className="flex justify-center items-center rounded-2xl border-2 border-[#F88944] shadow-2xl bg-[#95377F] aspect-3/4">
-              Slide 2
-            </SwiperSlide>
-            <SwiperSlide className="flex justify-center items-center rounded-2xl border-2 border-[#F88944] shadow-2xl bg-[#95377F] aspect-3/4">
-              Slide 3
-            </SwiperSlide>
+            {servicesData.map((service, index) => (
+              <SwiperSlide
+                key={index}
+                className="flex justify-center items-center overflow-visible rounded-2xl border-2 border-[#F88944] bg-[#95377F] aspect-3/4"
+              >
+                <div className="flex relative w-full h-full">
+                  <h2 className="flex w-full absolute -top-8 text-2xl text-white justify-center">
+                    {service.title}
+                  </h2>
+                  <Image
+                    src={service.imageSrc}
+                    alt={service.imageAlt}
+                    width={1024}
+                    height={900}
+                    className="w-full h-auto object-cover rounded-2xl"
+                  />
+                  <div className="flex flex-col w-full h-[35%] leading-tight justify-center absolute bottom-0 left-0 bg-[#95377F90] rounded-b-2xl p-4">
+                    <p className="flex w-full text-white">
+                      {service.description}
+                    </p>
+                    <div className="flex w-full h-auto flex-wrap justify-between mt-1 gap-1">
+                      {service.features.map((feature, index) => (
+                        <p
+                          key={index}
+                          className="flex text-white items-center text-nowrap mr-1"
+                        >
+                          <span className="text-[#F88944] text-xl mr-1">
+                            <BiSolidBadgeCheck />
+                          </span>
+                          {feature}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
-
-        <div className="flex w-full h-60 justify-center gap-5 items-start py-5">
+        <div className="flex w-full h-auto justify-center gap-5 items-start py-5">
           <Image
             src="/Cat_left.webp"
             alt="Cat"
             width={100}
             height={100}
-            className="w-40 h-auto"
+            className="w-40 h-auto object-contain"
           />
           <AppointmentButton />
         </div>

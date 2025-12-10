@@ -7,6 +7,7 @@ import ButtonUpDown from "@/components/buttonUpDown";
 import Advantage from "@/components/Advantage";
 import ServicesPage from "@/section/services";
 import Services_divider from "@/components/Services_divider";
+import PortfolioPage from "@/section/portfolio";
 
 export default function HomePage() {
   const { ref, inView } = useInView({
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Advantage />
       <ServicesPage />
       <Services_divider />
+      <PortfolioPage />
     </main>
   );
 }

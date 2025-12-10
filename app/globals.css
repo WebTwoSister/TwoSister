@@ -28,3 +28,16 @@ h1 {
     @apply text-[clamp(1rem,2vw,1.5rem)];
   }
 }
+
+/* Moved pagination outside the swiper */
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-pagination {
+  bottom: -30px !important;
+}
+/* Style active bullet pagination */
+.mySwiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: white;
+}
