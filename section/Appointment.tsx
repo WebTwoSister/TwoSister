@@ -3,6 +3,7 @@ import ContainerPadding from "@/components/ContainerPadding";
 import NameTitle from "@/components/nameTitle";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
 
 const services = [
   {
@@ -317,6 +318,29 @@ export default function AppointmentSection() {
                   },
                 }}
               />
+            </div>
+            <div className="flex w-full h-auto justify-center items-center">
+              <Button
+                variant="contained"
+                size="large"
+                sx={{
+                  my: 4,
+                  minWidth: 200,
+                  maxWidth: 250,
+                  maxHeight: 50,
+                  fontSize: "18px",
+                  fontFamily: "var(--font-bubblegum)",
+                  borderRadius: "30px",
+                  backgroundColor: "#F88944",
+                  color: "#000",
+                  textTransform: "none", // Uppercase removal
+                  "&:hover": {
+                    backgroundColor: "#E0712C",
+                  },
+                }}
+              >
+                Get Appointment
+              </Button>
             </div>
           </div>
           <div className="hidden lg:flex flex-1/3 relative">

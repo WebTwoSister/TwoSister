@@ -9,6 +9,7 @@ import ServicesSection from "@/section/services";
 import Services_divider from "@/components/Services_divider";
 import PortfolioSection from "@/section/portfolio";
 import AppointmentSection from "@/section/Appointment";
+import Testimonials from "@/section/testimonials";
 
 export default function HomePage() {
   const { ref, inView } = useInView({
@@ -26,6 +27,7 @@ export default function HomePage() {
       <Services_divider />
       <PortfolioSection />
       <AppointmentSection />
+      <Testimonials />
     </main>
   );
 }
