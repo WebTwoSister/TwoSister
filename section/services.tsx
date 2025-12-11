@@ -106,20 +106,20 @@ const servicesData: Service[] = [
   },
 ];
 
-export default function ServicesPage() {
+export default function ServicesSection() {
   const [serviceId, setServiceId] = useState<number>(1);
   const [selectedData, setSelectedData] = useState<Service>(servicesData[0]);
   return (
     <section
       id="services"
-      className="flex flex-col min-h-screen mt-40 container-padding bg-[linear-gradient(180deg,#95377F_27.92%,#CD655E_100%)]"
+      className="flex flex-col min-h-screen mt-40 bg-[linear-gradient(180deg,#95377F_27.92%,#CD655E_100%)]"
     >
       {/* Component with adaptive padding */}
       <ContainerPadding>
         <div className="flex flex-col justify-center items-center py-5 sm:py-20">
-          {/* Name of main title with underline */}
+          {/* Name of title with underline */}
           <NameTitle name="Services" color="text-white" />
-          {/* Main title */}
+          {/* Title */}
           <h2 className="h1-adaptive-text text-center max-w-xl text-white">
             <span className="text-[#F88944]">Best</span> Cleaning Services For{" "}
             <span className="text-[#F88944]">Your</span> Home
@@ -201,9 +201,9 @@ export default function ServicesPage() {
                 className="flex justify-center items-center overflow-visible rounded-2xl border-2 border-[#F88944] bg-[#95377F] aspect-3/4"
               >
                 <div className="flex relative w-full h-full">
-                  <h2 className="flex w-full absolute -top-8 text-2xl text-white justify-center">
+                  <h3 className="flex w-full absolute -top-8 text-2xl text-white justify-center">
                     {service.title}
-                  </h2>
+                  </h3>
                   <Image
                     src={service.imageSrc}
                     alt={service.imageAlt}

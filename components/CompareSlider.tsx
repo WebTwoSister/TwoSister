@@ -76,17 +76,17 @@ export const Slider = ({ Before, After, priority = false }: SliderProps) => {
     <div className="w-full relative">
       <div
         ref={containerRef}
-        className="relative w-full max-w-[700px] aspect-70/50 m-auto overflow-hidden select-none touch-none"
+        className="relative w-full max-w-[700px] aspect-70/50 m-auto overflow-hidden select-none touch-none rounded-2xl border-2 border-[#F88944]"
         onMouseDown={() => setIsDragging(true)}
         onTouchStart={() => setIsDragging(true)}
       >
         {sliderPosition < 95 ? (
-          <p className="absolute top-2 right-4 z-10 text-[1.2rem] text-[#c1c1c1] font-semibold">
+          <p className="absolute top-2 right-4 z-10 text-[1.2rem] text-[#444] font-semibold">
             After
           </p>
         ) : null}
         {sliderPosition > 5 ? (
-          <p className="absolute top-2 left-4 z-10 text-[1.2rem] text-[#c1c1c1] font-semibold">
+          <p className="absolute top-2 left-4 z-10 text-[1.2rem] text-[#444] font-semibold">
             Before
           </p>
         ) : null}
