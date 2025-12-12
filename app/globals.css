@@ -41,3 +41,7 @@ h1 {
 .mySwiper .swiper-pagination .swiper-pagination-bullet-active {
   background: white;
 }
+
+.mySwiper .swiper-navigation-icon {
+  color: orange;
+}

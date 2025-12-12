@@ -55,7 +55,7 @@ export default function AppointmentSection() {
           <div className="flex flex-col flex-2/3">
             <div className="flex flex-col md:flex-row w-full justify-between gap-4">
               <TextField
-                id="name"
+                id="enter-your-name"
                 label="Enter Your Name"
                 variant="outlined"
                 sx={{
@@ -103,7 +103,7 @@ export default function AppointmentSection() {
                 }}
               />
               <TextField
-                id="email"
+                id="enter-your-email"
                 label="Enter Your Email"
                 variant="outlined"
                 sx={{
@@ -151,7 +151,7 @@ export default function AppointmentSection() {
                 }}
               />
               <TextField
-                id="number"
+                id="enter-your-number"
                 label="Enter Your Number"
                 variant="outlined"
                 sx={{
@@ -201,7 +201,7 @@ export default function AppointmentSection() {
             </div>
             <div className="flex w-full h-auto my-5">
               <TextField
-                id="Choose A Service"
+                id="choose-a-service"
                 select
                 label="Choose A Service"
                 defaultValue="Regular Cleaning"
@@ -270,7 +270,7 @@ export default function AppointmentSection() {
             </div>
             <div className="w-full h-auto">
               <TextField
-                id="outlined-multiline-flexible"
+                id="your-message-here"
                 label="Your Message Here"
                 multiline
                 rows={4}
