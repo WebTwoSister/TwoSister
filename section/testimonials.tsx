@@ -38,7 +38,10 @@ const testimonials: Testimonials[] = [
 
 export default function Testimonials() {
   return (
-    <section className="w-full h-auto bg-[url(/Background.webp)] bg-no-repeat bg-center bg-cover">
+    <section
+      id="testimonials"
+      className="w-full h-auto bg-[url(/Background.webp)] bg-no-repeat bg-center bg-cover"
+    >
       <div className="flex w-full h-auto">
         <svg
           viewBox="0 0 1440 93"
