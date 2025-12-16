@@ -39,7 +39,7 @@ export default function AppointmentSection() {
             <NameTitle name="Appointment" color="text-black" />
             {/* Title */}
             <h2 className="h1-adaptive-text text-center lg:text-start max-w-xl text-black">
-              Get A<span className="text-[#F88944]">Free</span> Appointment
+              Get A <span className="text-[#F88944]">Free</span> Appointment
             </h2>
             {/* Description paragraph */}
             <p className="p-adaptive-text text-center lg:text-start text-black max-w-3xl">

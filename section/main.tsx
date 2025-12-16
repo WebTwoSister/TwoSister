@@ -2,7 +2,7 @@
 import ContainerPadding from "@/components/ContainerPadding";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdAccessTime } from "react-icons/md";
-import Navbar from "../components/navbar";
+import Navbar from "../components/NavbarMenu/navbar";
 import AppointmentButton from "@/components/Appoinment_button";
 import NameTitle from "@/components/nameTitle";
 import Image from "next/image";
@@ -92,7 +92,9 @@ const main = () => {
             </div>
             {/* Description paragraph */}
             <p className="p-adaptive-text text-start text-white">
-              We provide high-quality cleaning services for homes and offices. We use safe products, modern equipment and offer great deals for our clients. Contact us today for a free quote!
+              We provide high-quality cleaning services for homes and offices.
+              We use safe products, modern equipment and offer great deals for
+              our clients. Contact us today for a free quote!
             </p>
             {/* Appointment button and cat image */}
             <div className="flex w-full h-auto justify-center items-center md:justify-start md:items-start md:gap-10 my-4">

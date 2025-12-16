@@ -66,8 +66,9 @@ export default function FAQ() {
             </h2>
             {/* Description paragraph */}
             <p className="p-adaptive-text text-start text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Find clear answers to the most common questions about our cleaning
+              services, booking process, pricing, and what to expect. We’re here
+              to make everything simple and transparent for you.
             </p>
           </div>
           <div className="flex flex-col gap-2">
@@ -99,7 +100,7 @@ export default function FAQ() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="text-[1.25rem] text-white p-4">
+                      <p className="text-[clamp(1rem,2vw,2.5rem)] text-white p-4">
                         {item.answer}
                       </p>
                     </motion.div>

@@ -11,6 +11,7 @@ import PortfolioSection from "@/section/portfolio";
 import AppointmentSection from "@/section/Appointment";
 import Testimonials from "@/section/testimonials";
 import FAQ from "@/section/faq";
+import Footer from "@/section/footer";
 
 export default function HomePage() {
   const { ref, inView } = useInView({
@@ -30,6 +31,7 @@ export default function HomePage() {
       <AppointmentSection />
       <Testimonials />
       <FAQ />
+      <Footer />
     </main>
   );
 }
