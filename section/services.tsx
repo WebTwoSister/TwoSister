@@ -4,6 +4,10 @@ import Image from "next/image";
 import NameTitle from "@/components/nameTitle";
 import { BiSolidBadgeCheck } from "react-icons/bi";
 import AppointmentButton from "@/components/Appoinment_button";
+// Import type of service
+import { Service } from "@/app/types";
+// Import data of services
+import { servicesData } from "@/app/config";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,97 +18,6 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper/modules";
 
-// Type of data for servicesData
-type Service = {
-  id: number;
-  title: string;
-  description: string;
-  features: string[];
-  imageSrc: string;
-  imageAlt: string;
-};
-
-// Data of page
-const servicesData: Service[] = [
-  {
-    id: 1,
-    title: "Deep Cleaning",
-    description:
-      "A complete cleaning of your home with special attention to detail. We remove dust, dirt in hard-to-reach places, refresh the space and make your home shiny and tidy.",
-    features: [
-      "Deep cleaning of all surfaces.",
-      "Cleaning hard-to-reach places.",
-    ],
-    imageSrc: "/service_img1.webp",
-    imageAlt: "Spring cleaning service",
-  },
-  {
-    id: 2,
-    title: "Regular Cleaning",
-    description:
-      "Professional regular cleaning of your home or office to maintain cleanliness and order every day without unnecessary hassle.",
-    features: [
-      "Flexible cleaning schedule.",
-      "Using safe and effective cleaning products.",
-    ],
-    imageSrc: "/regular_cleaning.webp",
-    imageAlt: "Regular cleaning service",
-  },
-  {
-    id: 3,
-    title: "Post Construction Cleaning",
-    description:
-      "Cleaning after construction or renovation work to completely remove dust, debris, and material residues and prepare the space for use.",
-    features: [
-      "Removal of construction dust.",
-      "Detailed cleaning of all surfaces.",
-    ],
-    imageSrc: "/construction.webp",
-    imageAlt: "Construction cleaning service",
-  },
-  {
-    id: 4,
-    title: "Office Cleaning",
-    description:
-      "Regular and thorough cleaning of office spaces to create a clean, tidy and productive work environment.",
-    features: ["Sanitizing work areas.", "Wet cleaning."],
-    imageSrc: "/office.webp",
-    imageAlt: "Office cleaning service",
-  },
-  {
-    id: 5,
-    title: "Window Washing",
-    description:
-      "Professional window cleaning inside and out to ensure maximum transparency and light transmission without streaks or stains.",
-    features: ["Using professional tools.", "Using quality products."],
-    imageSrc: "/window.webp",
-    imageAlt: "Window washing service",
-  },
-  {
-    id: 6,
-    title: "Furniture Cleaning",
-    description:
-      "Thorough cleaning of furniture from dust, stains and odors to restore its fresh appearance and extend its service life.",
-    features: [
-      "Safe products for different types of surfaces.",
-      "Deep cleaning to remove stubborn dirt.",
-    ],
-    imageSrc: "/furniture.webp",
-    imageAlt: "Furniture cleaning service",
-  },
-  {
-    id: 7,
-    title: "Carpet Cleaning",
-    description:
-      "Deep and professional cleaning of carpets from dust, stains and unpleasant odors to restore their color, freshness and extend their service life.",
-    features: [
-      "Professional extraction or steam cleaning.",
-      "Effective removal of dust and stubborn stains.",
-    ],
-    imageSrc: "/carpet.webp",
-    imageAlt: "Carpet cleaning service",
-  },
-];
 
 export default function ServicesSection() {
   const [serviceId, setServiceId] = useState<number>(1);

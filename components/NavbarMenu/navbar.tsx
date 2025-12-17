@@ -2,7 +2,7 @@
 import Logo from "./logo";
 import AppointmentButton from "../Appoinment_button";
 import { AnimatedMenu } from "./AnimatedMenu";
-import navbarLinks from "@/app/config";
+import { navbarLinks } from "@/app/config";
 
 const navbar = () => {
   return (
@@ -30,7 +30,7 @@ const navbar = () => {
       </ul>
       {/* Appointment button */}
       <div className="hidden lg:flex items-center mr-2">
-        <AppointmentButton name="Get Appointment" />
+        <AppointmentButton name="Book Appointment" />
       </div>
     </nav>
   );

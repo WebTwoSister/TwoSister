@@ -22,7 +22,7 @@ export default function AppointmentButton({ name }: { name?: string }) {
         },
       }}
     >
-      {name || "Get Appointment"}
+      {name || "Book Appointment"}
     </Button>
   );
 }

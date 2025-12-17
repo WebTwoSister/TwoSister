@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Logo({ className }: { className?: string }) {
   return (
-    <div className={`flex items-center min-w-60 h-full mr-2 ${className}`}>
+    <div className={`flex items-center min-w-50 h-full mr-2 ${className}`}>
       <Image
         src="/ico.webp"
         alt="Logo"

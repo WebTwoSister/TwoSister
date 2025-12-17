@@ -1,11 +1,13 @@
 import ContainerPadding from "@/components/ContainerPadding";
 import Image from "next/image";
 import NameTitle from "@/components/nameTitle";
-import { forwardRef } from "react";
 
-const about = forwardRef<HTMLDivElement>((props, ref) => {
+
+
+const About = (
+  () => {
   return (
-    <section id="about" ref={ref} className="flex w-full">
+    <section id="about" className="flex w-full">
       {/* Component with castom adaptive padding */}
       <ContainerPadding>
         <div className="flex flex-col md:flex-row gap-10 w-full h-auto">
@@ -50,4 +52,4 @@ const about = forwardRef<HTMLDivElement>((props, ref) => {
   );
 });
 
-export default about;
+export default About;

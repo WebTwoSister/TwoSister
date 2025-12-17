@@ -55,7 +55,7 @@ export default function FAQ() {
   const [faqId, setFaqId] = useState<number>(1);
   return (
     <section id="faq" className="w-full h-auto bg-[#963880]">
-      <ContainerPadding className="flex h-auto pb-10 gap-[5%]">
+      <ContainerPadding className="flex h-auto lg:min-h-230 pb-10 gap-[5%]">
         <div className="flex flex-col flex-[60%] w-full h-auto">
           <div className="w-full h-auto mb-10">
             <NameTitle name="Frequently Asked Questions" />
@@ -80,7 +80,7 @@ export default function FAQ() {
                   <button
                     onClick={() => setFaqId(isOpen ? 0 : item.id)}
                     className={`flex w-full justify-center items-center border-2 text-white 
-            text-[clamp(1rem,2vw,2.5rem)] shadow-2xl cursor-pointer rounded-4xl 
+            p-adaptive-text shadow-2xl cursor-pointer rounded-4xl 
             p-[clamp(0.15rem,0.5vw,0.4rem)]
             ${
               isOpen
@@ -100,7 +100,7 @@ export default function FAQ() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="text-[clamp(1rem,2vw,2.5rem)] text-white p-4">
+                      <p className="p-adaptive-text text-white p-4">
                         {item.answer}
                       </p>
                     </motion.div>
@@ -116,7 +116,7 @@ export default function FAQ() {
             alt="faq"
             width={300}
             height={600}
-            className="object-contain sticky top-20"
+            className="object-contain w-80 h-auto sticky top-20"
           />
         </div>
       </ContainerPadding>

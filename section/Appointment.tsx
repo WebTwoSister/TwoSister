@@ -4,30 +4,9 @@ import NameTitle from "@/components/nameTitle";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
+// import data of services
+import { servicesData } from "@/app/config";
 
-const services = [
-  {
-    value: "Deep Cleaning",
-  },
-  {
-    value: "Regular Cleaning",
-  },
-  {
-    value: "Post Construction Cleaning",
-  },
-  {
-    value: "Office Cleaning",
-  },
-  {
-    value: "Window Washing",
-  },
-  {
-    value: "Furniture Cleaning",
-  },
-  {
-    value: "Carpet Cleaning",
-  },
-];
 
 export default function AppointmentSection() {
   return (
@@ -248,22 +227,22 @@ export default function AppointmentSection() {
                   "& .MuiInputLabel-root.Mui-focused": {
                     color: "#fff",
                   },
-                  // Колір стрілки
+                  // Color of arrow
                   "& .MuiSelect-icon": {
-                    color: "#fff", // <-- твій колір
+                    color: "#fff",
                   },
                 }}
               >
-                {services.map((option) => (
+                {servicesData.map((option) => (
                   <MenuItem
-                    key={option.value}
-                    value={option.value}
+                    key={option.title}
+                    value={option.title}
                     sx={{
                       fontFamily: "var(--font-bubblegum)",
                       fontSize: "18px",
                     }}
                   >
-                    {option.value}
+                    {option.title}
                   </MenuItem>
                 ))}
               </TextField>
@@ -339,7 +318,7 @@ export default function AppointmentSection() {
                   },
                 }}
               >
-                Get Appointment
+                Submit
               </Button>
             </div>
           </div>

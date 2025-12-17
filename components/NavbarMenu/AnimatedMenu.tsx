@@ -4,19 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { CgMenuRight } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
+// Import menu items
+import { navbarLinks } from "@/app/config";
+// Import Appointment button
+import AppointmentButton from "../Appoinment_button";
 
 export const AnimatedMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
-
-  const menuItems = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About Us" },
-    { href: "#services", label: "Services" },
-    { href: "#projects", label: "Projects" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contacts", label: "Contacts" },
-  ];
 
   return (
     <div className="relative">
@@ -35,9 +30,9 @@ export const AnimatedMenu = () => {
         {isOpen && (
           <motion.div
             key="menu"
-            initial={{ clipPath: "circle(0% at 80% 10%)" }}
-            animate={{ clipPath: "circle(150vw at 80% 10%)" }}
-            exit={{ clipPath: "circle(0% at 80% 10%)" }}
+            initial={{ clipPath: "circle(0% at 90% 10%)" }}
+            animate={{ clipPath: "circle(170vw at 90% 10%)" }}
+            exit={{ clipPath: "circle(0% at 90% 10%)" }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
             className="
               fixed top-0 right-0 w-full sm:w-[50%] h-screen
@@ -59,7 +54,7 @@ export const AnimatedMenu = () => {
 
             {/* MENU ITEMS */}
             <ul className="pt-24 w-full flex flex-col items-center text-[#96377F]">
-              {menuItems.map((item, index) => (
+              {navbarLinks.map((item, index) => (
                 <motion.li
                   key={item.href}
                   initial={{ opacity: 0, y: 30 }}
@@ -81,6 +76,15 @@ export const AnimatedMenu = () => {
                 </motion.li>
               ))}
             </ul>
+            {/* Appointment button */}
+            <motion.span
+            initial={{opacity: 0, scale: 0.5}}
+            animate={{opacity: 1, scale: 1}}
+            exit={{opacity: 0, scale: 0.5}}
+            transition={{delay: 0.8, duration: 0.3}}
+            >
+            <AppointmentButton />
+            </motion.span>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import ContainerPadding from "@/components/ContainerPadding";
 import NameTitle from "@/components/nameTitle";
+// Import testimonials data
+import { testimonials } from "@/app/config";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,29 +14,6 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 
-type Testimonials = {
-  id: number;
-  text: string;
-  image: string;
-};
-
-const testimonials: Testimonials[] = [
-  {
-    id: 1,
-    text: "Tatiana and Irena are an amazing team who have been cleaning my home for the past two years. They are extremely professional and so hard working! I am always so pleased with the work they do to make my home so fresh and clean. They pay attention to all the little details.I have recommended them to friends and they, too, have been so pleased with their work. I highly recommend these amazing people if you are looking for cleaners who do a great job and approach their work with pride, love and laughter! Pat Adamson.",
-    image: "/testimonial1.webp",
-  },
-  {
-    id: 2,
-    text: "Two sisters cleaning has years of experience. They are very trustworthy. They clean for my church friends and condo friends. Your place will sparkle and they’re very cheerful.  Vera Mandryk.",
-    image: "/testimonial2.webp",
-  },
-  {
-    id: 3,
-    text: "My name is Coleen  and I would like to personally endorse the cleaning skills of the Tetania and Irina! I chanced upon these two lovely women as recommended by someone on Facebook ! I cannot tell you how many of my friends have chosen to use their services ! I have only heard amazingly positive things about their service! They are prompt, very, very thorough , professional, honest, trustworthy, and really I could not say enough good things about them! I was so glad to have found them in my life! You will not be disappointed",
-    image: "/testimonial3.webp",
-  },
-];
 
 export default function Testimonials() {
   return (
@@ -42,6 +21,7 @@ export default function Testimonials() {
       id="testimonials"
       className="w-full h-auto bg-[url(/Background.webp)] bg-no-repeat bg-center bg-cover"
     >
+      {/* Wavy top divider */}
       <div className="flex w-full h-auto">
         <svg
           viewBox="0 0 1440 93"
@@ -54,6 +34,7 @@ export default function Testimonials() {
           />
         </svg>
       </div>
+      {/* Container with adaptive padding */}
       <ContainerPadding>
         <div className="flex flex-col w-full h-auto items-center justify-center">
           <div className="flex w-full h-auto flex-col justify-center items-center py-5 sm:py-20">
@@ -68,6 +49,7 @@ export default function Testimonials() {
               Real testimonials our customers.
             </p>
           </div>
+          {/* Swiper container */}
           <div className="flex w-full 2xl:w-[70%] h-auto py-10 overflow-hidden">
             <Swiper
               navigation={true}
@@ -79,7 +61,7 @@ export default function Testimonials() {
               className="mySwiper w-full h-auto"
             >
               {testimonials.map((item) => (
-                <SwiperSlide key={item.id} className="flex h-auto w-full">
+                <SwiperSlide key={item.id} className="flex h-auto w-full cursor-grab">
                   <div className="flex flex-col md:flex-row w-full h-auto">
                     <div className="h-auto order-2 md:order-1">
                       <Image
@@ -102,9 +84,10 @@ export default function Testimonials() {
           </div>
         </div>
       </ContainerPadding>
+      {/* Wavy bottom divider */}
       <div className="flex w-full h-auto">
         <svg
-          viewBox="0 0 1440 127"
+          viewBox="0 0 1440 126"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >

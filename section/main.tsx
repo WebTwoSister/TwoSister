@@ -99,7 +99,7 @@ const main = () => {
             {/* Appointment button and cat image */}
             <div className="flex w-full h-auto justify-center items-center md:justify-start md:items-start md:gap-10 my-4">
               {/* Appointment button component */}
-              <AppointmentButton name="Get Appointment" />
+              <AppointmentButton name="Book Appointment" />
               <div className="hidden md:flex">
                 <Image
                   src="/Cat.webp"

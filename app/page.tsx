@@ -14,7 +14,7 @@ import FAQ from "@/section/faq";
 import Footer from "@/section/footer";
 
 export default function HomePage() {
-  const { ref, inView } = useInView({
+  const { ref: servicesRef, inView } = useInView({
     threshold: 0.3, // when 30% of the section is visible — activated
   });
 
@@ -22,8 +22,7 @@ export default function HomePage() {
     <main className="flex flex-col">
       <MainSection />
       <Main_divider />
-      <AboutSection ref={ref} />
-      <ButtonUpDown visible={inView} />
+      <AboutSection />
       <Advantage />
       <ServicesSection />
       <Services_divider />
@@ -32,6 +31,7 @@ export default function HomePage() {
       <Testimonials />
       <FAQ />
       <Footer />
+      <ButtonUpDown visible={inView} />
     </main>
   );
 }
