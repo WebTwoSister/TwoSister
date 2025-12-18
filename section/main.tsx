@@ -43,43 +43,39 @@ const main = () => {
             </h1>
             {/* Image for small screens */}
             <div className="flex relative md:hidden">
+              {[1,2].map((_,index) => (
               <Image
+                key={index}
                 src="/Star.svg"
                 alt="Star"
                 width={20}
                 height={20}
-                className="absolute top-5 left-15 w-5 h-auto"
+                className={`absolute ${index % 2 === 0 ? "top-20 left-20" : "top-5 left-16"} opacity-40 w-5 h-auto`}
               />
-              <Image
-                src="/Star.svg"
-                alt="Star"
-                width={20}
-                height={20}
-                className="absolute top-20 left-20 w-5 h-auto"
-              />
+              ))}
 
               <motion.div
-                className="absolute top-12 left-5 w-10 h-10 flex items-center justify-center"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  rotate: [0, 360, 360, 1],
-                  opacity: [1, 0.5, 1, 1],
-                }}
-                transition={{
-                  duration: 5,
-                  times: [0, 0.3, 0.6, 1],
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Image
-                  src="/Star.svg"
-                  alt="Star"
-                  width={40}
-                  height={40}
-                  className="w-40 h-auto"
-                />
-              </motion.div>
+               className="absolute top-12 left-5 w-10 h-10 flex items-center justify-center"
+               animate={{
+                 scale: [0.8, 1.2, 0.8],
+                 opacity: [0.4, 1, 0.4],
+                 rotate: [-10, 10, -10],
+               }}
+               transition={{
+                 duration: 2.5,
+                 repeat: Infinity,
+                 ease: "easeInOut",
+                 repeatDelay: 1 
+               }}
+             >
+               <Image
+                 src="/Star.svg"
+                 alt="Clean Sparkle"
+                 width={40}
+                 height={40}
+                 className="w-full h-auto drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]" 
+               />
+             </motion.div>
               <Image
                 src="/Main_IMG1.webp"
                 alt="Main"
@@ -106,7 +102,7 @@ const main = () => {
                   alt="Cat"
                   width={200}
                   height={200}
-                  className="w-full h-auto min-h-40 max-h-180 max-w-150"
+                  className="w-50 h-auto"
                 />
               </div>
             </div>
@@ -114,43 +110,39 @@ const main = () => {
 
           {/* Image for large screens */}
           <div className="hidden relative md:flex flex-1/2 justify-end">
-            <Image
-              src="/Star.svg"
-              alt="Star"
-              width={20}
-              height={20}
-              className="absolute top-5 left-15 w-5 h-auto"
-            />
-            <Image
-              src="/Star.svg"
-              alt="Star"
-              width={20}
-              height={20}
-              className="absolute top-20 left-20 w-5 h-auto"
-            />
-
-            <motion.div
-              className="absolute top-12 left-5 w-10 h-10 flex items-center justify-center"
-              animate={{
-                scale: [1, 1.5, 1],
-                rotate: [0, 360, 360, 1],
-                opacity: [1, 0.5, 1, 1],
-              }}
-              transition={{
-                duration: 5,
-                times: [0, 0.3, 0.6, 1],
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
+            {[1,2].map((_,index) => (
               <Image
+                key={index}
                 src="/Star.svg"
                 alt="Star"
-                width={40}
-                height={40}
-                className="w-40 h-auto"
+                width={20}
+                height={20}
+                className={`absolute ${index % 2 === 0 ? "top-20 left-20" : "top-5 left-16"} w-5 h-auto opacity-40`}
               />
-            </motion.div>
+              ))}
+
+            <motion.div
+               className="absolute top-12 left-5 w-10 h-10 flex items-center justify-center"
+               animate={{
+                 scale: [0.8, 1.2, 0.8],
+                 opacity: [0.4, 1, 0.4],
+                 rotate: [-10, 10, -10],
+               }}
+               transition={{
+                 duration: 2.5,
+                 repeat: Infinity,
+                 ease: "easeInOut",
+                 repeatDelay: 1 
+               }}
+             >
+               <Image
+                 src="/Star.svg"
+                 alt="Clean Sparkle"
+                 width={40}
+                 height={40}
+                 className="w-full h-auto drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]" 
+               />
+             </motion.div>
 
             <Image
               src="/Main_IMG1.webp"

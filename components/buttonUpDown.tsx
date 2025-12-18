@@ -8,7 +8,7 @@ export default function ButtonUpDown({ visible }: { visible: boolean }) {
       initial={{ opacity: 0, y: 20 }}
       animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.4 }}
-      className="flex flex-col fixed top-[50%] right-1 justify-between text-[0.875rem] h-50 z-50"
+      className="flex flex-col fixed top-[50%] right-2 justify-between text-[0.875rem] h-auto z-50"
     >
       {/* Button Up container */}
       <button
@@ -25,7 +25,7 @@ export default function ButtonUpDown({ visible }: { visible: boolean }) {
         <span className="absolute bottom-3 left-3 text-white">Up</span>
       </button>
       {/* Button Down container */}
-      <button
+      {/* <button
         onClick={() =>
           window.scrollTo({
             top: document.body.scrollHeight,
@@ -42,7 +42,7 @@ export default function ButtonUpDown({ visible }: { visible: boolean }) {
           className="w-full h-auto"
         />
         <span className="absolute top-4 left-1 text-white">Down</span>
-      </button>
+      </button> */}
     </motion.div>
   );
 }

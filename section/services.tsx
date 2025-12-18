@@ -25,7 +25,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="flex flex-col min-h-screen mt-40 bg-[linear-gradient(180deg,#95377F_27.92%,#CD655E_100%)]"
+      className="flex flex-col mt-40 bg-[linear-gradient(180deg,#95377F_27.92%,#CD655E_100%)]"
     >
       {/* Component with adaptive padding */}
       <ContainerPadding>

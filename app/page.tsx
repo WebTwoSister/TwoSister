@@ -1,5 +1,7 @@
-"use client";
-import { useInView } from "react-intersection-observer";
+'use client';
+
+import { useInView } from 'react-intersection-observer';
+import { useState, useEffect } from 'react';
 import MainSection from "../section/main";
 import AboutSection from "../section/about";
 import Main_divider from "@/components/Main_divider";
@@ -14,9 +16,10 @@ import FAQ from "@/section/faq";
 import Footer from "@/section/footer";
 
 export default function HomePage() {
-  const { ref: servicesRef, inView } = useInView({
-    threshold: 0.3, // when 30% of the section is visible — activated
+  const { ref, inView } = useInView({
+    threshold: 0.1,
   });
+
 
   return (
     <main className="flex flex-col">
@@ -24,6 +27,7 @@ export default function HomePage() {
       <Main_divider />
       <AboutSection />
       <Advantage />
+      <div ref={ref}>
       <ServicesSection />
       <Services_divider />
       <PortfolioSection />
@@ -31,6 +35,7 @@ export default function HomePage() {
       <Testimonials />
       <FAQ />
       <Footer />
+      </div>
       <ButtonUpDown visible={inView} />
     </main>
   );

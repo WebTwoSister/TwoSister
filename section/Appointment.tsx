@@ -17,7 +17,7 @@ export default function AppointmentSection() {
             {/* Name of title with underline */}
             <NameTitle name="Appointment" color="text-black" />
             {/* Title */}
-            <h2 className="h1-adaptive-text text-center lg:text-start max-w-xl text-black">
+            <h2 className="h1-adaptive-text text-center lg:text-start text-black">
               Get A <span className="text-[#F88944]">Free</span> Appointment
             </h2>
             {/* Description paragraph */}
@@ -37,145 +37,16 @@ export default function AppointmentSection() {
                 id="enter-your-name"
                 label="Enter Your Name"
                 variant="outlined"
-                sx={{
-                  width: "100%",
-
-                  // Font style for text inside
-                  "& .MuiInputBase-input": {
-                    fontSize: "1.25rem",
-                    fontFamily: "var(--font-bubblegum)",
-                    borderRadius: "30px",
-                    color: "#fdfdfd",
-                    px: "1rem",
-                  },
-
-                  // Font style for label
-                  "& .MuiInputLabel-root": {
-                    fontFamily: "var(--font-bubblegum)",
-                    fontSize: "18px",
-                    color: "#fdfdfd",
-                  },
-
-                  // Border style (regular state)
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderRadius: "30px",
-                      borderColor: "#F88944",
-                      borderWidth: "2px",
-                    },
-
-                    // Hover state
-                    "&:hover fieldset": {
-                      borderColor: "#ff5722",
-                    },
-
-                    // Active border (focus)
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#fff",
-                      borderWidth: "2px",
-                    },
-                  },
-                  // Color of the raised label when focused
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "#fff",
-                  },
-                }}
               />
               <TextField
                 id="enter-your-email"
                 label="Enter Your Email"
                 variant="outlined"
-                sx={{
-                  width: "100%",
-
-                  // Font style for text inside
-                  "& .MuiInputBase-input": {
-                    fontSize: "1.25rem",
-                    fontFamily: "var(--font-bubblegum)",
-                    borderRadius: "30px",
-                    color: "#fdfdfd",
-                    px: "1rem",
-                  },
-
-                  // Font style for label
-                  "& .MuiInputLabel-root": {
-                    fontFamily: "var(--font-bubblegum)",
-                    fontSize: "18px",
-                    color: "#fdfdfd",
-                  },
-
-                  // Border style (regular state)
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderRadius: "30px",
-                      borderColor: "#F88944",
-                      borderWidth: "2px",
-                    },
-
-                    // Hover state
-                    "&:hover fieldset": {
-                      borderColor: "#ff5722",
-                    },
-
-                    // Active border (focus)
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#fff",
-                      borderWidth: "2px",
-                    },
-                  },
-                  // Color of the raised label when focused
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "#fff",
-                  },
-                }}
               />
               <TextField
                 id="enter-your-number"
                 label="Enter Your Number"
                 variant="outlined"
-                sx={{
-                  width: "100%",
-
-                  // Font style for text inside
-                  "& .MuiInputBase-input": {
-                    fontSize: "1.25rem",
-                    fontFamily: "var(--font-bubblegum)",
-                    borderRadius: "30px",
-                    color: "#fdfdfd",
-                    px: "1rem",
-                  },
-
-                  // Font style for label
-                  "& .MuiInputLabel-root": {
-                    fontFamily: "var(--font-bubblegum)",
-                    fontSize: "18px",
-                    color: "#fdfdfd",
-                  },
-
-                  // Border style (regular state)
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderRadius: "30px",
-                      borderColor: "#F88944",
-                      borderWidth: "2px",
-                    },
-
-                    // Hover state
-                    "&:hover fieldset": {
-                      borderColor: "#ff5722",
-                    },
-
-                    // Active border (focus)
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#fff",
-                      borderWidth: "2px",
-                    },
-                  },
-                  // Color of the raised label when focused
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "#fff",
-                  },
-                }}
               />
             </div>
             <div className="flex w-full h-auto my-5">
@@ -185,62 +56,11 @@ export default function AppointmentSection() {
                 label="Choose A Service"
                 defaultValue="Regular Cleaning"
                 // helperText="Please select your currency"
-                sx={{
-                  width: "100%",
-
-                  // Font style for text inside
-                  "& .MuiInputBase-input": {
-                    fontSize: "1.25rem",
-                    fontFamily: "var(--font-bubblegum)",
-                    borderRadius: "30px",
-                    color: "#fdfdfd",
-                    px: "1rem",
-                  },
-
-                  // Font style for label
-                  "& .MuiInputLabel-root": {
-                    fontFamily: "var(--font-bubblegum)",
-                    fontSize: "18px",
-                    color: "#fdfdfd",
-                  },
-
-                  // Border style (regular state)
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderRadius: "30px",
-                      borderColor: "#F88944",
-                      borderWidth: "2px",
-                    },
-
-                    // Hover state
-                    "&:hover fieldset": {
-                      borderColor: "#ff5722",
-                    },
-
-                    // Active border (focus)
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#fff",
-                      borderWidth: "2px",
-                    },
-                  },
-                  // Color of the raised label when focused
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "#fff",
-                  },
-                  // Color of arrow
-                  "& .MuiSelect-icon": {
-                    color: "#fff",
-                  },
-                }}
               >
                 {servicesData.map((option) => (
                   <MenuItem
                     key={option.title}
                     value={option.title}
-                    sx={{
-                      fontFamily: "var(--font-bubblegum)",
-                      fontSize: "18px",
-                    }}
                   >
                     {option.title}
                   </MenuItem>
@@ -253,70 +73,12 @@ export default function AppointmentSection() {
                 label="Your Message Here"
                 multiline
                 rows={4}
-                sx={{
-                  width: "100%",
-
-                  // Font style for text inside
-                  "& .MuiInputBase-input": {
-                    fontSize: "1.25rem",
-                    fontFamily: "var(--font-bubblegum)",
-                    borderRadius: "30px",
-                    color: "#fdfdfd",
-                    px: "1rem",
-                  },
-
-                  // Font style for label
-                  "& .MuiInputLabel-root": {
-                    fontFamily: "var(--font-bubblegum)",
-                    fontSize: "18px",
-                    color: "#fdfdfd",
-                  },
-
-                  // Border style (regular state)
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderRadius: "30px",
-                      borderColor: "#F88944",
-                      borderWidth: "2px",
-                    },
-
-                    // Hover state
-                    "&:hover fieldset": {
-                      borderColor: "#ff5722",
-                    },
-
-                    // Active border (focus)
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#fff",
-                      borderWidth: "2px",
-                    },
-                  },
-                  // Color of the raised label when focused
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "#fff",
-                  },
-                }}
               />
             </div>
             <div className="flex w-full h-auto justify-center items-center">
               <Button
                 variant="contained"
                 size="large"
-                sx={{
-                  my: 4,
-                  minWidth: 200,
-                  maxWidth: 250,
-                  maxHeight: 50,
-                  fontSize: "18px",
-                  fontFamily: "var(--font-bubblegum)",
-                  borderRadius: "30px",
-                  backgroundColor: "#F88944",
-                  color: "#000",
-                  textTransform: "none", // Uppercase removal
-                  "&:hover": {
-                    backgroundColor: "#E0712C",
-                  },
-                }}
               >
                 Submit
               </Button>
