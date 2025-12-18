@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import ContainerPadding from "@/components/ContainerPadding";
 import Image from "next/image";
 import NameTitle from "@/components/nameTitle";
@@ -17,7 +18,6 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
-
 
 export default function ServicesSection() {
   const [serviceId, setServiceId] = useState<number>(1);
@@ -45,7 +45,20 @@ export default function ServicesSection() {
           </p>
         </div>
         {/* Main container buttons + content */}
-        <div className="hidden md:flex w-full h-auto max-h-[40vw] gap-[clamp(4%,2vw,10%)]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          // The viewport controls exactly how the animation works.
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            delay: 0.2,
+            duration: 0.3,
+          }}
+          className="hidden md:flex w-full h-auto max-h-[40vw] gap-[clamp(4%,2vw,10%)]"
+        >
           {/* Button container */}
           <div className="flex flex-col flex-[40%] h-auto justify-between items-end">
             {servicesData.map((service) => (
@@ -98,7 +111,7 @@ export default function ServicesSection() {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
         <div className="flex relative md:hidden justify-center items-center w-full overflow-hidden py-10">
           <Swiper
             spaceBetween={50}

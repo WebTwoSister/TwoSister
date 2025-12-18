@@ -30,12 +30,12 @@ export const AnimatedMenu = () => {
         {isOpen && (
           <motion.div
             key="menu"
-            initial={{ clipPath: "circle(0% at 90% 10%)" }}
-            animate={{ clipPath: "circle(170vw at 90% 10%)" }}
-            exit={{ clipPath: "circle(0% at 90% 10%)" }}
+            initial={{ clipPath: "circle(0% at 80% 10%)" }}
+            animate={{ clipPath: "circle(150vw at 80% 10%)" }}
+            exit={{ clipPath: "circle(0% at 80% 10%)" }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
             className="
-              fixed top-0 right-0 w-full sm:w-[50%] h-screen
+              fixed top-0 right-0 w-full sm:w-[50%] sm:rounded-bl-full h-screen
               bg-[linear-gradient(45deg,#ffffff_0%,#ffffff_30%,#F88944_100%,#F88944_100%)]
               shadow-xl flex flex-col items-center z-50
             "
@@ -64,7 +64,7 @@ export const AnimatedMenu = () => {
                     duration: 0.4,
                     delay: 0.4 + index * 0.1,
                   }}
-                  className="text-2xl py-4 w-full text-center"
+                  className="text-2xl p-[clamp(0.4rem,2vw,1rem)] w-full text-center"
                 >
                   <a
                     href={item.href}
@@ -78,12 +78,12 @@ export const AnimatedMenu = () => {
             </ul>
             {/* Appointment button */}
             <motion.span
-            initial={{opacity: 0, scale: 0.5}}
-            animate={{opacity: 1, scale: 1}}
-            exit={{opacity: 0, scale: 0.5}}
-            transition={{delay: 0.8, duration: 0.3}}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ delay: 1, duration: 0.3 }}
             >
-            <AppointmentButton />
+              <AppointmentButton />
             </motion.span>
           </motion.div>
         )}

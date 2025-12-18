@@ -1,23 +1,40 @@
+import { useId } from "react";
 import Image from "next/image";
 import ContainerPadding from "@/components/ContainerPadding";
 import NameTitle from "@/components/nameTitle";
-import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  TextField,
+} from "@mui/material";
 import Button from "@mui/material/Button";
 // import data of services
 import { servicesData } from "@/app/config";
 
-
 export default function AppointmentSection() {
+  const nameId = useId();
+  const emailId = useId();
+  const phoneId = useId();
+  const messageId = useId();
+
   return (
-    <section id="appointment" className="w-full h-auto">
+    <section
+      id="appointment"
+      aria-labelledby="appointment-title"
+      className="w-full h-auto"
+    >
       <ContainerPadding>
         <div className="flex w-full h-auto lg:pr-[35%]">
           <div className="flex w-full flex-col items-center py-5 sm:py-20">
             {/* Name of title with underline */}
             <NameTitle name="Appointment" color="text-black" />
             {/* Title */}
-            <h2 className="h1-adaptive-text text-center lg:text-start text-black">
+            <h2
+              id="appointment-title"
+              className="h1-adaptive-text text-center lg:text-start text-black"
+            >
               Get A <span className="text-[#F88944]">Free</span> Appointment
             </h2>
             {/* Description paragraph */}
@@ -31,60 +48,69 @@ export default function AppointmentSection() {
       </ContainerPadding>
       <div className="flex w-full h-auto bg-[#963880] py-10">
         <ContainerPadding className="flex">
-          <div className="flex flex-col flex-2/3">
+          <form className="flex flex-col flex-2/3">
             <div className="flex flex-col md:flex-row w-full justify-between gap-4">
               <TextField
-                id="enter-your-name"
+                id={nameId}
                 label="Enter Your Name"
                 variant="outlined"
+                required
+                name="name"
               />
               <TextField
-                id="enter-your-email"
+                id={emailId}
                 label="Enter Your Email"
                 variant="outlined"
+                type="email"
+                required
+                name="email"
               />
               <TextField
-                id="enter-your-number"
+                id={phoneId}
                 label="Enter Your Number"
                 variant="outlined"
+                required
+                type="tel"
+                name="phone"
               />
             </div>
             <div className="flex w-full h-auto my-5">
-              <TextField
-                id="choose-a-service"
-                select
-                label="Choose A Service"
-                defaultValue="Regular Cleaning"
-                // helperText="Please select your currency"
-              >
-                {servicesData.map((option) => (
-                  <MenuItem
-                    key={option.title}
-                    value={option.title}
-                  >
-                    {option.title}
-                  </MenuItem>
-                ))}
-              </TextField>
+              <FormControl fullWidth>
+                <InputLabel id="service-select-label">
+                  Choose A Service
+                </InputLabel>
+
+                <Select
+                  labelId="service-select-label"
+                  id="service-select-component"
+                  label="Choose A Service" // Required for correct cutout in the frame (Outline)
+                  defaultValue="Regular Cleaning"
+                  name="service"
+                >
+                  {servicesData.map((option) => (
+                    <MenuItem key={option.title} value={option.title}>
+                      {option.title}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </div>
             <div className="w-full h-auto">
               <TextField
-                id="your-message-here"
+                id={messageId}
                 label="Your Message Here"
                 multiline
                 rows={4}
+                name="message"
               />
             </div>
             <div className="flex w-full h-auto justify-center items-center">
-              <Button
-                variant="contained"
-                size="large"
-              >
+              <Button type="submit" variant="contained" size="large">
                 Submit
               </Button>
             </div>
-          </div>
-          <div className="hidden lg:flex flex-1/3 relative">
+          </form>
+          <div className="hidden lg:flex flex-1/3 relative" aria-hidden="true">
             <Image
               src="/Appointment.webp"
               alt="Appointment"
