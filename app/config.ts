@@ -1,4 +1,4 @@
-import { NavbarLink, Testimonial, Service } from "./types";
+import { NavbarLink, Testimonial, Service, FAQ } from "./types";
 
 // Links for navbar and footer
 export const navbarLinks: NavbarLink[] = [
@@ -109,5 +109,45 @@ export const servicesData: Service[] = [
     ],
     imageSrc: "/carpet.webp",
     imageAlt: "Carpet cleaning service",
+  },
+];
+
+// FAQ data
+export const faqData: FAQ[] = [
+  {
+    id: 1,
+    question: "Do I need to provide cleaning supplies?",
+    answer:
+      "No, you don’t need to worry about providing any cleaning products or equipment. Our team arrives fully equipped with all the necessary tools and professional-grade supplies to complete the job efficiently.",
+  },
+  {
+    id: 2,
+    question: "Are you cleaning products eco-friendly?",
+    answer:
+      "Yes, we use eco-friendly and non-toxic cleaning products that are safe for children, pets, and the environment.",
+  },
+  {
+    id: 3,
+    question: "How do I book a cleaning appointment?",
+    answer:
+      "You can easily book a cleaning appointment through our website by clicking the Get Appointment button, or text us at our phone number. We will confirm the details with you.",
+  },
+  {
+    id: 4,
+    question: "How long does a typical cleaning take?",
+    answer:
+      "The duration depends on the size of the space and the type of service, but most cleanings take between 2 to 4 hours.",
+  },
+  {
+    id: 5,
+    question: "How much does a cleaning service cost?",
+    answer:
+      "The cost depends on the size of your space and the type of cleaning service. Contact us for a free, personalized estimate.",
+  },
+  {
+    id: 6,
+    question: "Do you provide cleaning services in homes with pets?",
+    answer:
+      "Absolutely! We are pet-friendly and use safe, non-toxic cleaning products. We kindly ask that pets are secured during the cleaning for their comfort and safety.",
   },
 ];

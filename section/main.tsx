@@ -36,7 +36,7 @@ const main = () => {
         </header>
         <div className="flex flex-col md:flex-row w-full h-auto">
           <div className="flex flex-col flex-1/2 lg:justify-center py-10">
-            {/* Name of main title with underline */}
+            {/* Subtitle with underline */}
             <NameTitle name="Cleaning Service" />
             {/* Main title */}
             <h1
@@ -48,6 +48,7 @@ const main = () => {
             </h1>
             {/* Image for small screens */}
             <div className="flex relative md:hidden">
+              {/* Stars animation */}
               <div aria-hidden="true" className="contents">
                 {[1, 2].map((_, index) => (
                   <Image
@@ -85,6 +86,7 @@ const main = () => {
                   />
                 </motion.div>
               </div>
+              {/* Main image */}
               <Image
                 src="/Main_IMG1.webp"
                 alt="Professional cleaning service"
@@ -119,6 +121,7 @@ const main = () => {
 
           {/* Image for large screens */}
           <div className="hidden relative md:flex flex-1/2 justify-end">
+            {/* Stars animation */}
             <div className="contents" aria-hidden="true">
               {[1, 2].map((_, index) => (
                 <Image
@@ -156,7 +159,7 @@ const main = () => {
                 />
               </motion.div>
             </div>
-
+            {/* Main image */}
             <Image
               src="/Main_IMG1.webp"
               alt="Professional cleaning service"

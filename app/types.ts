@@ -21,3 +21,10 @@ export type Service = {
   imageSrc: string;
   imageAlt: string;
 };
+
+// Types for faqData
+export type FAQ = {
+  id: number;
+  question: string;
+  answer: string;
+};

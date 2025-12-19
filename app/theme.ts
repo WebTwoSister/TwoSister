@@ -84,7 +84,7 @@ export const theme = createTheme({
             paddingRight: "8px",
           },
         },
-        // frame crop control
+        // Control cutout in the frame (Outline)
         notchedOutline: {
           "& legend": {
             fontSize: "0.85em",

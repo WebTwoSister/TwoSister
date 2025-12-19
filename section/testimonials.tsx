@@ -12,17 +12,17 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
-
+import { Pagination, Navigation, A11y, Keyboard } from "swiper/modules";
 
 export default function Testimonials() {
   return (
     <section
+      aria-labelledby="testimonials-title"
       id="testimonials"
       className="w-full h-auto bg-[url(/Background.webp)] bg-no-repeat bg-center bg-cover"
     >
       {/* Wavy top divider */}
-      <div className="flex w-full h-auto">
+      <div aria-hidden="true" className="flex w-full h-auto">
         <svg
           viewBox="0 0 1440 93"
           fill="none"
@@ -38,10 +38,13 @@ export default function Testimonials() {
       <ContainerPadding>
         <div className="flex flex-col w-full h-auto items-center justify-center">
           <div className="flex w-full h-auto flex-col justify-center items-center py-5 sm:py-20">
-            {/* Name of title with underline */}
+            {/* Subtitle with underline */}
             <NameTitle name="Testimonials" color="text-black" />
             {/* Title */}
-            <h2 className="h1-adaptive-text text-center max-w-xl text-black">
+            <h2
+              id="testimonials-title"
+              className="h1-adaptive-text text-center max-w-xl text-black"
+            >
               What Our Customers Say
             </h2>
             {/* Description paragraph */}
@@ -57,16 +60,31 @@ export default function Testimonials() {
               pagination={{
                 clickable: true,
               }}
-              modules={[Pagination, Navigation]}
+              modules={[Pagination, Navigation, A11y, Keyboard]}
+              keyboard={{ enabled: true }}
+              a11y={{
+                enabled: true,
+                prevSlideMessage: "Previous slide",
+                nextSlideMessage: "Next slide",
+                firstSlideMessage: "This is the first slide",
+                lastSlideMessage: "This is the last slide",
+              }}
               className="mySwiper w-full h-auto"
             >
               {testimonials.map((item) => (
-                <SwiperSlide key={item.id} className="flex h-auto w-full cursor-grab">
+                <SwiperSlide
+                  key={item.id}
+                  className="flex h-auto w-full cursor-grab"
+                >
+                  {/* Testimonial content */}
                   <div className="flex flex-col md:flex-row w-full h-auto">
-                    <div className="h-auto order-2 md:order-1">
+                    <div
+                      aria-hidden="true"
+                      className="h-auto order-2 md:order-1"
+                    >
                       <Image
                         src={item.image}
-                        alt="testimonial"
+                        alt=""
                         width={400}
                         height={800}
                         className="h-auto object-contain aspect-3/4"
@@ -85,7 +103,7 @@ export default function Testimonials() {
         </div>
       </ContainerPadding>
       {/* Wavy bottom divider */}
-      <div className="flex w-full h-auto">
+      <div aria-hidden="true" className="flex w-full h-auto">
         <svg
           viewBox="0 0 1440 126"
           fill="none"

@@ -24,18 +24,22 @@ export default function ServicesSection() {
   const [selectedData, setSelectedData] = useState<Service>(servicesData[0]);
   return (
     <section
+      aria-labelledby="service-title"
       id="services"
       className="flex flex-col mt-40 bg-[linear-gradient(180deg,#95377F_27.92%,#CD655E_100%)]"
     >
       {/* Component with adaptive padding */}
       <ContainerPadding>
         <div className="flex flex-col justify-center items-center py-5 sm:py-20">
-          {/* Name of title with underline */}
+          {/* Subtitle title with underline */}
           <NameTitle name="Services" color="text-white" />
           {/* Title */}
-          <h2 className="h1-adaptive-text text-center max-w-xl text-white">
+          <h2
+            id="service-title"
+            className="h1-adaptive-text text-center max-w-xl text-white"
+          >
             <span className="text-[#F88944]">Best</span> Cleaning Services For{" "}
-            <span className="text-[#F88944]">Your</span> Home
+            <span className="text-[#F88944]">Your</span> Home or Office
           </h2>
           {/* Description paragraph */}
           <p className="p-adaptive-text text-center text-white max-w-3xl">
@@ -64,6 +68,7 @@ export default function ServicesSection() {
             {servicesData.map((service) => (
               <button
                 key={service.id}
+                aria-pressed={service.id === serviceId} // Accessibility feature
                 onClick={() => {
                   setSelectedData(service);
                   setServiceId(service.id);
@@ -82,6 +87,7 @@ export default function ServicesSection() {
           <div className="flex flex-[60%] w-full h-auto justify-end items-center">
             {selectedData && (
               <div className="flex relative h-auto w-full max-h-[40vw] rounded-3xl border-2 border-[#F88944] overflow-hidden">
+                <h3 className="sr-only">{selectedData.title}</h3>
                 <Image
                   src={selectedData.imageSrc}
                   alt={selectedData.imageAlt}
@@ -100,7 +106,10 @@ export default function ServicesSection() {
                         key={index}
                         className="flex text-white items-center text-nowrap mr-2"
                       >
-                        <span className="text-[#F88944] text-2xl mr-2">
+                        <span
+                          aria-hidden="true"
+                          className="text-[#F88944] text-2xl mr-2"
+                        >
                           <BiSolidBadgeCheck />
                         </span>
                         {feature}
@@ -112,6 +121,7 @@ export default function ServicesSection() {
             )}
           </div>
         </motion.div>
+        {/* Mobile Swiper */}
         <div className="flex relative md:hidden justify-center items-center w-full overflow-hidden py-10">
           <Swiper
             spaceBetween={50}
@@ -126,6 +136,7 @@ export default function ServicesSection() {
                 key={index}
                 className="flex justify-center items-center overflow-visible rounded-2xl border-2 border-[#F88944] bg-[#95377F] aspect-3/4"
               >
+                {/* Slider content */}
                 <div className="flex relative w-full h-full">
                   <h3 className="flex w-full absolute -top-8 text-2xl text-white justify-center">
                     {service.title}
@@ -137,6 +148,7 @@ export default function ServicesSection() {
                     height={900}
                     className="w-full h-auto object-cover rounded-2xl"
                   />
+                  {/* Description container */}
                   <div className="flex flex-col w-full h-[35%] leading-tight justify-center absolute bottom-0 left-0 bg-[#95377F90] rounded-b-2xl p-4">
                     <p className="flex w-full text-white">
                       {service.description}
@@ -160,10 +172,12 @@ export default function ServicesSection() {
             ))}
           </Swiper>
         </div>
+        {/* Button container with decorative image */}
         <div className="flex w-full h-auto justify-center gap-5 items-start py-5">
           <Image
             src="/Cat_left.webp"
-            alt="Cat"
+            alt=""
+            aria-hidden="true"
             width={100}
             height={100}
             className="w-40 h-auto object-contain"

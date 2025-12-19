@@ -1,11 +1,10 @@
-'use client';
+"use client";
 
-import { useInView } from 'react-intersection-observer';
-import { useState, useEffect } from 'react';
+import { useInView } from "react-intersection-observer";
 import MainSection from "../section/main";
 import AboutSection from "../section/about";
 import Main_divider from "@/components/Main_divider";
-import ButtonUpDown from "@/components/buttonUpDown";
+import ButtonUp from "@/components/buttonUp";
 import Advantage from "@/components/Advantage";
 import ServicesSection from "@/section/services";
 import Services_divider from "@/components/Services_divider";
@@ -20,23 +19,24 @@ export default function HomePage() {
     threshold: 0.1,
   });
 
-
   return (
-    <main className="flex flex-col">
-      <MainSection />
-      <Main_divider />
-      <AboutSection />
-      <Advantage />
-      <div ref={ref}>
-      <ServicesSection />
-      <Services_divider />
-      <PortfolioSection />
-      <AppointmentSection />
-      <Testimonials />
-      <FAQ />
+    <>
+      <main className="flex flex-col">
+        <MainSection />
+        <Main_divider />
+        <AboutSection />
+        <Advantage />
+        <div aria-hidden="true" ref={ref}>
+          <ServicesSection />
+          <Services_divider />
+          <PortfolioSection />
+          <AppointmentSection />
+          <Testimonials />
+          <FAQ />
+        </div>
+        <ButtonUp visible={inView} />
+      </main>
       <Footer />
-      </div>
-      <ButtonUpDown visible={inView} />
-    </main>
+    </>
   );
 }

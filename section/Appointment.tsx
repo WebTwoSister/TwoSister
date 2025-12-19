@@ -28,7 +28,7 @@ export default function AppointmentSection() {
       <ContainerPadding>
         <div className="flex w-full h-auto lg:pr-[35%]">
           <div className="flex w-full flex-col items-center py-5 sm:py-20">
-            {/* Name of title with underline */}
+            {/* Subtitle with underline */}
             <NameTitle name="Appointment" color="text-black" />
             {/* Title */}
             <h2

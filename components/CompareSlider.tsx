@@ -75,6 +75,8 @@ export const Slider = ({ Before, After, priority = false }: SliderProps) => {
   return (
     <div className="w-full relative">
       <div
+        role="slider"
+        aria-label="Before and after comparison slider"
         ref={containerRef}
         className="relative w-full max-w-[700px] aspect-70/50 m-auto overflow-hidden select-none touch-none rounded-2xl border-2 border-[#F88944]"
         onMouseDown={() => setIsDragging(true)}

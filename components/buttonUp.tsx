@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function ButtonUpDown({ visible }: { visible: boolean }) {
+export default function ButtonUp({ visible }: { visible: boolean }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -12,37 +12,20 @@ export default function ButtonUpDown({ visible }: { visible: boolean }) {
     >
       {/* Button Up container */}
       <button
+        aria-label="Scroll to top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="relative w-10 h-20 cursor-pointer opacity-30 hover:opacity-100 transition-opacity duration-300"
       >
         <Image
           src="/button_up.svg"
-          alt="up"
+          alt=""
+          aria-hidden="true"
           width={15}
           height={20}
           className="w-full h-auto"
         />
         <span className="absolute bottom-3 left-3 text-white">Up</span>
       </button>
-      {/* Button Down container */}
-      {/* <button
-        onClick={() =>
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          })
-        }
-        className="relative w-10 h-20 cursor-pointer opacity-30 hover:opacity-100 transition-opacity duration-300"
-      >
-        <Image
-          src="/button_down.svg"
-          alt="down"
-          width={15}
-          height={20}
-          className="w-full h-auto"
-        />
-        <span className="absolute top-4 left-1 text-white">Down</span>
-      </button> */}
     </motion.div>
   );
 }

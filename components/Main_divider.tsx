@@ -1,6 +1,6 @@
 const Main_divider = () => {
   return (
-    <div className="flex w-full h-auto">
+    <div aria-hidden="true" className="flex w-full h-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"

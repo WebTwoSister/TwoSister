@@ -2,12 +2,9 @@ import ContainerPadding from "@/components/ContainerPadding";
 import Image from "next/image";
 import NameTitle from "@/components/nameTitle";
 
-
-
-const About = (
-  () => {
+const About = () => {
   return (
-    <section id="about" className="flex w-full">
+    <section aria-labelledby="about-title" id="about" className="flex w-full">
       {/* Component with castom adaptive padding */}
       <ContainerPadding>
         <div className="flex flex-col md:flex-row gap-10 w-full h-auto">
@@ -22,10 +19,13 @@ const About = (
             />
           </div>
           <div className="flex flex-col flex-1/2 pt-10">
-            {/* Name of main title with underline */}
+            {/* Subtitle title with underline */}
             <NameTitle name="About Us" color="text-black" />
-            {/* Main title */}
-            <h2 className="h1-adaptive-text text-center md:text-start text-black md:mb-8">
+            {/* Title */}
+            <h2
+              id="about-title"
+              className="h1-adaptive-text text-center md:text-start text-black md:mb-8"
+            >
               <span className="text-[#F88944]">Two</span> Sisters - Cleaning
               Services
             </h2>
@@ -43,13 +43,15 @@ const About = (
             </div>
             {/* Description paragraph */}
             <p className="p-adaptive-text text-start text-black">
-              Two Sisters is a team of cleaning professionals who care about the cleanliness and comfort of your home and office. We use safe products and an individual approach to each client.
+              Two Sisters is a team of cleaning professionals who care about the
+              cleanliness and comfort of your home and office. We use safe
+              products and an individual approach to each client.
             </p>
           </div>
         </div>
       </ContainerPadding>
     </section>
   );
-});
+};
 
 export default About;
