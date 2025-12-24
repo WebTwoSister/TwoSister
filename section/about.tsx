@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import ContainerPadding from "@/components/ContainerPadding";
 import Image from "next/image";
 import NameTitle from "@/components/nameTitle";
@@ -9,7 +10,20 @@ const About = () => {
       <ContainerPadding>
         <div className="flex flex-col md:flex-row gap-10 w-full h-auto">
           {/* Image for large screens */}
-          <div className="hidden relative md:flex flex-1/2 justify-start max-h-120">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            // The viewport controls exactly how the animation works.
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              delay: 0.2,
+              duration: 0.3,
+            }}
+            className="hidden relative md:flex flex-1/2 justify-start max-h-120"
+          >
             <Image
               src="/About.webp"
               alt="About"
@@ -17,7 +31,7 @@ const About = () => {
               height={400}
               className="w-full h-auto object-contain"
             />
-          </div>
+          </motion.div>
           <div className="flex flex-col flex-1/2 pt-10">
             {/* Subtitle title with underline */}
             <NameTitle name="About Us" color="text-black" />
@@ -30,7 +44,20 @@ const About = () => {
               Services
             </h2>
             {/* Image for small screens */}
-            <div className="flex relative md:hidden max-h-120 my-6">
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              // The viewport controls exactly how the animation works.
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 0.3,
+              }}
+              className="flex relative md:hidden max-h-120 my-6"
+            >
               <Image
                 src="/About.webp"
                 alt="About"
@@ -40,7 +67,7 @@ const About = () => {
                 height={600}
                 className="h-auto object-contain"
               />
-            </div>
+            </motion.div>
             {/* Description paragraph */}
             <p className="p-adaptive-text text-start text-black">
               Two Sisters is a team of cleaning professionals who care about the

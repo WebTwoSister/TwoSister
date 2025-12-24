@@ -50,16 +50,13 @@ export default function ServicesSection() {
         </div>
         {/* Main container buttons + content */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          // The viewport controls exactly how the animation works.
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
+          initial={{ opacity: 0, scale: 0.9, y: 100 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{
-            delay: 0.2,
-            duration: 0.3,
+            delay: 0.1,
+            duration: 0.2,
+            ease: "easeOut",
           }}
           className="hidden md:flex w-full h-auto max-h-[40vw] gap-[clamp(4%,2vw,10%)]"
         >

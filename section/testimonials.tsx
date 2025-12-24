@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { SplitText } from "@/utils/SplitText";
+import { useInView } from "framer-motion";
 import Image from "next/image";
 import ContainerPadding from "@/components/ContainerPadding";
 import NameTitle from "@/components/nameTitle";
@@ -15,8 +18,12 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, A11y, Keyboard } from "swiper/modules";
 
 export default function Testimonials() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
     <section
+      ref={ref}
       aria-labelledby="testimonials-title"
       id="testimonials"
       className="w-full h-auto bg-[url(/Background.webp)] bg-no-repeat bg-center bg-cover"
@@ -90,10 +97,25 @@ export default function Testimonials() {
                         className="h-auto object-contain aspect-3/4"
                       />
                     </div>
+
                     <div className="w-full h-auto md:ml-10 order-1 md:order-2">
-                      <p className="w-full md:max-w-[70%] h-auto border-2 border-[#444] rounded-2xl p-4 bg-white">
-                        {item.text}
-                      </p>
+                      <div className="w-full md:max-w-[70%] h-auto border-2 border-[#444] rounded-2xl p-4 bg-white">
+                        <SplitText
+                          initial="hidden"
+                          // whileInView="visible"
+                          animate={isInView ? "visible" : "hidden"}
+                          variants={{
+                            hidden: { y: "100%", opacity: 0 },
+                            visible: (i: number) => ({
+                              y: 0,
+                              opacity: 1,
+                              transition: { delay: i * 0.1, duration: 0.4 },
+                            }),
+                          }}
+                        >
+                          {item.text}
+                        </SplitText>
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>
