@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
         <div className="flex w-full h-auto justify-center md:justify-start">
           <div className="flex w-40 md:w-full h-auto flex-col md:flex-row justify-between items-start md:items-start p-adaptive-text">
-            <address className="flex text-white mb-3">
+            <address className="flex text-white not-italic mb-3">
               <span className="text-2xl text-[#F88944] mr-2">
                 <FaLocationDot />
               </span>

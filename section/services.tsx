@@ -97,7 +97,7 @@ export default function ServicesSection() {
                   <p className="flex w-full text-white">
                     {selectedData.description}
                   </p>
-                  <div className="flex w-full h-auto flex-wrap justify-between mt-2 gap-2">
+                  <div className="flex flex-col w-full h-auto flex-wrap justify-between mt-2 gap-2">
                     {selectedData.features.map((feature, index) => (
                       <p
                         key={index}

@@ -45,7 +45,7 @@ export default function PortfolioSection() {
               }}
               className="flex flex-1/2 justify-center items-center rotate-6 md:py-20 py-5 md:ml-10"
             >
-              <Slider Before="/Before.webp" After="/After.webp" />
+              <Slider Before="/BeforeKitchen.webp" After="/AfterKitchen.webp" />
             </motion.div>
           </div>
           {/* Container with compare sliders 2 and 3 */}
@@ -65,11 +65,17 @@ export default function PortfolioSection() {
           >
             {/* Slider 2 */}
             <div className="flex flex-1/2 justify-center -rotate-8 items-center md:mr-10 py-15">
-              <Slider Before="/Before.webp" After="/After.webp" />
+              <Slider
+                Before="/BeforeLivingroom.webp"
+                After="/AfterLivingroom.webp"
+              />
             </div>
             {/* Slider 3 */}
             <div className="flex flex-1/2 justify-center -rotate-3 items-center md:ml-10">
-              <Slider Before="/Before.webp" After="/After.webp" />
+              <Slider
+                Before="/BeforeBathroom.webp"
+                After="/AfterBathroom.webp"
+              />
             </div>
           </motion.div>
         </div>

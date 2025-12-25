@@ -36,7 +36,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           fontSize: "18px",
-          color: "#fdfdfd",
+          color: "#fff",
           textAlign: "left",
           transformOrigin: "left",
           "&.Mui-focused": {
@@ -66,16 +66,16 @@ export const theme = createTheme({
           borderRadius: "30px",
           "& fieldset": {
             borderRadius: "30px",
-            borderColor: "#F88944",
+            borderColor: "#fff",
             borderWidth: "2px",
             transition: "border-color 0.2s ease-in-out",
           },
 
           "&:hover fieldset": {
-            borderColor: "#fff !important",
+            borderColor: "#F88944 !important",
           },
           "&.Mui-focused fieldset": {
-            borderColor: "#fff !important",
+            borderColor: "#F88944 !important",
             borderWidth: "2px",
           },
           "& label": {
@@ -93,7 +93,7 @@ export const theme = createTheme({
 
         input: {
           fontSize: "1.25rem",
-          color: "#fdfdfd",
+          color: "#fff",
           padding: "14px 1rem",
           textAlign: "left",
         },

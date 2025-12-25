@@ -29,7 +29,7 @@ const navbar = () => {
           ))}
       </ul>
       {/* Appointment button */}
-      <div className="hidden lg:flex items-center mr-2">
+      <div className="hidden lg:flex items-center mr-[5px]">
         <AppointmentButton name="Book Appointment" />
       </div>
     </nav>
