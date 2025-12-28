@@ -1,13 +1,17 @@
-import { useId } from "react";
+import { useId, useState } from "react";
 import Image from "next/image";
 import ContainerPadding from "@/components/ContainerPadding";
 import NameTitle from "@/components/nameTitle";
+// MUI components
 import {
   FormControl,
   InputLabel,
   Select,
   MenuItem,
   TextField,
+  Box,
+  Typography,
+  Modal,
 } from "@mui/material";
 import Button from "@mui/material/Button";
 // import data of services
@@ -18,6 +22,43 @@ export default function AppointmentSection() {
   const emailId = useId();
   const phoneId = useId();
   const messageId = useId();
+  const [name, setName] = useState<"" | string>("");
+  const [email, setEmail] = useState<"" | string>("");
+  const [phone, setPhone] = useState<"" | string>("");
+  const [service, setService] = useState<string>(servicesData[0].title);
+  const [message, setMessage] = useState<"" | string>("");
+  const [open, setOpen] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formData = { name, email, phone, service, message };
+
+    try {
+      const res = await fetch("/api/sendTelegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setOpen(true);
+        // Clear form
+        setName("");
+        setEmail("");
+        setPhone("");
+        setService("");
+        setMessage("");
+      } else {
+        alert("Error: " + data.error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error while sending!");
+    }
+  };
 
   return (
     <section
@@ -25,6 +66,57 @@ export default function AppointmentSection() {
       aria-labelledby="appointment-title"
       className="w-full h-auto"
     >
+      {/* Modal popup */}
+      <Modal
+        open={open}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className="flex flex-col items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-3/4 bg-white border-2 border-[#F88944] rounded-3xl shadow-lg p-6">
+          <div>
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{
+                fontSize: {
+                  xs: "1.5rem",
+                  sm: "2rem",
+                  md: "3rem",
+                },
+                textAlign: "center",
+                color: "#963880",
+              }}
+            >
+              Thank you for your request!
+            </Typography>
+            <Typography
+              id="modal-modal-description"
+              sx={{
+                fontSize: {
+                  xs: "1.2rem",
+                  sm: "1.5rem",
+                  md: "2rem",
+                },
+                textAlign: "center",
+                color: "#963880",
+                mt: 2,
+              }}
+            >
+              We are already processing your application and will contact you
+              shortly.
+            </Typography>
+          </div>
+          <Button
+            variant="contained"
+            size="large"
+            className="mt-4"
+            onClick={() => setOpen(false)}
+          >
+            OK
+          </Button>
+        </Box>
+      </Modal>
       <ContainerPadding>
         <div className="flex w-full h-auto lg:pr-[35%]">
           <div className="flex w-full flex-col items-center py-5 sm:py-20">
@@ -48,7 +140,7 @@ export default function AppointmentSection() {
       </ContainerPadding>
       <div className="flex w-full h-auto bg-[#963880] py-10">
         <ContainerPadding className="flex">
-          <form className="flex flex-col flex-2/3">
+          <form onSubmit={handleSubmit} className="flex flex-col flex-2/3">
             <div className="flex flex-col md:flex-row w-full justify-between gap-4">
               <TextField
                 id={nameId}
@@ -56,6 +148,8 @@ export default function AppointmentSection() {
                 variant="outlined"
                 required
                 name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <TextField
                 id={emailId}
@@ -64,6 +158,8 @@ export default function AppointmentSection() {
                 type="email"
                 required
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
                 id={phoneId}
@@ -72,6 +168,16 @@ export default function AppointmentSection() {
                 required
                 type="tel"
                 name="phone"
+                value={phone}
+                onChange={(e) => {
+                  // only numbers allowed
+                  const value = e.target.value.replace(/\D/g, "");
+                  setPhone(value);
+                }}
+                inputProps={{
+                  inputMode: "numeric", // mobile phones will only have a numeric keypad
+                  pattern: "[0-9]*",
+                }}
               />
             </div>
             <div className="flex w-full h-auto my-5">
@@ -86,6 +192,8 @@ export default function AppointmentSection() {
                   label="Choose A Service" // Required for correct cutout in the frame (Outline)
                   defaultValue="Regular Cleaning"
                   name="service"
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
                 >
                   {servicesData.map((option) => (
                     <MenuItem key={option.title} value={option.title}>
@@ -102,6 +210,8 @@ export default function AppointmentSection() {
                 multiline
                 rows={4}
                 name="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
             <div className="flex w-full h-auto justify-center items-center">
