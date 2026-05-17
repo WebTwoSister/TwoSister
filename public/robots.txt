@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://two-sisters-tau.vercel.app/sitemap.xml

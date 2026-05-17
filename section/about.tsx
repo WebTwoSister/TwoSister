@@ -1,0 +1,84 @@
+import { motion } from "framer-motion";
+import ContainerPadding from "@/components/ContainerPadding";
+import Image from "next/image";
+import NameTitle from "@/components/nameTitle";
+
+const About = () => {
+  return (
+    <section aria-labelledby="about-title" id="about" className="flex w-full">
+      {/* Component with castom adaptive padding */}
+      <ContainerPadding>
+        <div className="flex flex-col md:flex-row gap-10 w-full h-auto">
+          {/* Image for large screens */}
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            // The viewport controls exactly how the animation works.
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              delay: 0.2,
+              duration: 0.3,
+            }}
+            className="hidden relative md:flex flex-1/2 justify-start max-h-120"
+          >
+            <Image
+              src="/About.webp"
+              alt="About"
+              width={400}
+              height={400}
+              sizes="400px"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+          <div className="flex flex-col flex-1/2 pt-10">
+            {/* Subtitle title with underline */}
+            <NameTitle name="About Us" color="text-black" />
+            {/* Title */}
+            <h2
+              id="about-title"
+              className="h1-adaptive-text text-center md:text-start text-black md:mb-8"
+            >
+              <span className="text-[#F88944]">Two</span> Sisters - Cleaning
+              Services
+            </h2>
+            {/* Image for small screens */}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              // The viewport controls exactly how the animation works.
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 0.3,
+              }}
+              className="flex relative md:hidden max-h-120 my-6"
+            >
+              <Image
+                src="/About.webp"
+                alt="About"
+                width={400}
+                height={400}
+                sizes="90vw"
+                className="h-auto object-contain"
+              />
+            </motion.div>
+            {/* Description paragraph */}
+            <p className="p-adaptive-text text-start text-black">
+              Two Sisters is a team of cleaning professionals who care about the
+              cleanliness and comfort of your home and office. We use safe
+              products and an individual approach to each client.
+            </p>
+          </div>
+        </div>
+      </ContainerPadding>
+    </section>
+  );
+};
+
+export default About;

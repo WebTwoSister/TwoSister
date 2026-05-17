@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-bubblegum: var(--font-bubblegum);
+  --font-baloo: var(--font-baloo);
+  --breakpoint-3xl: 1920px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: var(--font-bubblegum);
+  /* font-family: var(--font-baloo); */
+}
+h1,
+h2 {
+  font-family: var(--font-baloo);
+}
+
+@layer {
+  .h1-adaptive-text {
+    @apply text-[clamp(2rem,4vw,4rem)] leading-tight;
+  }
+  .p-adaptive-text {
+    @apply text-[clamp(1rem,2vw,1.5rem)];
+  }
+}
+
+/* Moved pagination outside the swiper */
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-pagination {
+  bottom: -30px !important;
+}
+/* Style active bullet pagination */
+.mySwiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: white;
+}
+
+.mySwiper .swiper-pagination {
+  pointer-events: none;
+}
+
+.mySwiper .swiper-navigation-icon {
+  color: orange;
+}
+@media (max-width: 640px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
