@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
           text,
           parse_mode: "HTML",
         }),
-      }
+      },
     );
 
     const data = await response.json();
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     console.error(error);
     return NextResponse.json(
       { error: "Something went wrong" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

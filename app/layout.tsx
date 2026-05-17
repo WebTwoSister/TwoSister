@@ -17,7 +17,7 @@ const bubblegum = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://two-sisters-tau.vercel.app/"),
+  metadataBase: new URL("https://twosisterss.ca/"),
   title: "Two Sisters Cleaning | Winnipeg",
   description:
     "Two Sisters Cleaning in Winnipeg offers reliable, affordable and high-quality cleaning services for homes, apartments and offices. Book your cleaning today.",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Looking for trusted cleaning in Winnipeg? Two Sisters provides affordable, detailed and professional cleaning services for houses, condos, apartments and offices. Enjoy a fresh and spotless space. Book now!",
     type: "website",
     locale: "en_CA",
-    url: "https://two-sisters-tau.vercel.app/",
+    url: "https://twosisterss.ca/",
     siteName: "Two Sisters Cleaning",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
@@ -61,10 +61,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Two Sisters Cleaning Service",
-              url: "https://two-sisters-tau.vercel.app/",
+              url: "https://twosisterss.ca/",
               description:
                 "Professional cleaning service offering high-quality cleaning for homes and offices.",
-              image: "https://two-sisters-tau.vercel.app/Main_IMG1.webp",
+              image: "https://twosisterss.ca/Main_IMG1.webp",
             }),
           }}
         />
