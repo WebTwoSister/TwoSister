@@ -131,14 +131,14 @@ export default function Footer() {
               Monday to Saturday: 8:00AM - 5:00PM
             </p>
             <a
-              href="mailto:twosisters@gmail.com"
+              href="mailto:tania.skrapnik1977@gmail.com"
               className="flex text-white items-center mb-3"
               aria-label="Send email to Two Sisters"
             >
               <span className="text-[#F88944] text-2xl mr-2">
                 <MdOutlineEmail />
               </span>{" "}
-              twosisters@gmail.com
+              tania.skrapnik1977@gmail.com
             </a>
           </div>
         </div>
